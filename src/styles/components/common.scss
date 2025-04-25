@@ -1,0 +1,19 @@
+/* 
+  * @desc: common components styles
+  * @date: 2025-04-09
+*/
+
+// ****   **** //
+.com-container {
+  &.container-type {
+    &__page {
+    }
+    &__block {
+    }
+    &__container {
+      @include mixins.reponsive("PC") {
+        min-width: 1232px;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+// ignore file to stylelint
+node_modules
+dist
+public
+*.min.css

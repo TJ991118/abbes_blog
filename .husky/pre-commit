@@ -1,0 +1,11 @@
+
+# Runing unit tests before pushing
+echo "🚀 Running unit tests before pushing..."
+yarn test --run
+if [ $? -ne 0 ]; then
+  echo "❌ Unit Tests failed. Push aborted."
+  exit 1
+else 
+  echo "✅ Unit Tests passed. Proceeding with push."
+  exit 0
+fi

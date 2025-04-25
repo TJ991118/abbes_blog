@@ -1,0 +1,57 @@
+/* 
+  * @desc: some common styles for full project
+  * @date: 2025-04-09
+*/
+@use "sass:map";
+@use "sass:list";
+
+@mixin flex($direction: row, $justify-content: flex-start, $align-item: flex-start, $align-content: flex-start) {
+  display: flex;
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+
+  @if $align-item {
+    align-items: $align-item;
+  }
+
+  @if $align-content {
+    align-content: $align-content;
+  }
+}
+
+$breakpoints: (
+  "MB": (max: 29.99rem),
+  "TB": (min: 30rem, max: 94.49rem),
+  "PC": (min: 94.5rem)
+);
+
+@mixin responsive($startDevice, $endDevice: $startDevice) {
+  $startConfig: map.get($breakpoints, $startDevice);
+  $endConfig: map.get($breakpoints, $endDevice);
+
+
+  $min: if(map.has-key($startConfig, min), map.get($startConfig, min), null);
+  $max: if(map.has-key($endConfig, max), map.get($endConfig, max), null);
+
+  $query: ();
+  @if $min { $query: list.append($query, "(min-width: #{$min})") }
+  @if $max { $query: list.append($query, "(max-width: #{$max})") }
+
+  @if list.length($query) > 0 {
+    $condition: if(
+      list.length($query) > 1, 
+      list.join($query, " and "),
+      list.nth($query, 1) 
+    );
+    @media screen and #{$condition} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

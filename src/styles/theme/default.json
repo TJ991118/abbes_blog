@@ -1,0 +1,21 @@
+{
+  "palette": {
+    "primary": "red",
+    "secondary": "green",
+    "netural": "blue",
+    "success": "green",
+    "error": "red"
+  },
+  "font": {
+    "size": {
+    },
+    "weight": {
+    }
+  },
+  "radius": {
+
+  },
+  "shadow": {
+    
+  }
+}
