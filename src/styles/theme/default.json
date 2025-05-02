@@ -6,16 +6,10 @@
     "success": "green",
     "error": "red"
   },
-  "font": {
-    "size": {
-    },
-    "weight": {
+  "other": {
+    "fontSize": {
+      "md": "1rem",
+      "sm": ""
     }
-  },
-  "radius": {
-
-  },
-  "shadow": {
-    
   }
 }

@@ -7,6 +7,7 @@
 
 @mixin flex($direction: row, $justify-content: flex-start, $align-item: flex-start, $align-content: flex-start) {
   display: flex;
+
   @if $direction {
     flex-direction: $direction;
   }
@@ -31,15 +32,14 @@ $breakpoints: (
 );
 
 @mixin responsive($startDevice, $endDevice: $startDevice) {
-  $startConfig: map.get($breakpoints, $startDevice);
-  $endConfig: map.get($breakpoints, $endDevice);
-
-
-  $min: if(map.has-key($startConfig, min), map.get($startConfig, min), null);
-  $max: if(map.has-key($endConfig, max), map.get($endConfig, max), null);
-
+  $start-config: map.get($breakpoints, $startDevice);
+  $end-config: map.get($breakpoints, $endDevice);
+  $min: if(map.has-key($start-config, min), map.get($start-config, min), null);
+  $max: if(map.has-key($end-config, max), map.get($end-config, max), null);
   $query: ();
+
   @if $min { $query: list.append($query, "(min-width: #{$min})") }
+
   @if $max { $query: list.append($query, "(max-width: #{$max})") }
 
   @if list.length($query) > 0 {
@@ -48,6 +48,7 @@ $breakpoints: (
       list.join($query, " and "),
       list.nth($query, 1) 
     );
+
     @media screen and #{$condition} {
       @content;
     }
