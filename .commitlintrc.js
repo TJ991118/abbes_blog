@@ -16,5 +16,5 @@ export default {
       ],
     ],
     "scope-empty": [2, "never"], // scope 不能为空
-  },
+  }
 };

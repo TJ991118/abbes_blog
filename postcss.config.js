@@ -3,7 +3,7 @@ export default {
     "@daltontan/postcss-import-json": {
       path: ['src/style/theme '],
       expand: true,
-      prefix: 'apsc'
+      prefix: 'abbes'
     },
   },
 };

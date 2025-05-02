@@ -1,11 +1,10 @@
-
-# Runing unit tests before pushing
-echo "🚀 Running unit tests before pushing..."
-yarn test --run
+# Code lint checked
+echo "🚀 Running lint before commit..."
+yarn lint
 if [ $? -ne 0 ]; then
-  echo "❌ Unit Tests failed. Push aborted."
+  echo "❌ Lint failed. Commit aborted."
   exit 1
 else 
-  echo "✅ Unit Tests passed. Proceeding with push."
+  echo "✅ Lint passed. Proceeding with commit."
   exit 0
 fi
