@@ -1,5 +1,12 @@
 export default {
   extends: ["@commitlint/config-conventional"],
+  parserPreset: {
+    parserOpts: {
+      headerPattern: /^(\p{Emoji_Presentation}?)\s?(\w*)(\(\w*\))?:\s(.*)$/u,
+      headerCorrespondence: ["emoji", "type", "scope", "subject"],
+    },
+  },
+  // 🌲 🛠 📝 🧲 📦 📜 🔖 📌
   rules: {
     "type-enum": [
       2,
@@ -10,12 +17,13 @@ export default {
         "docs", // Updated Document
         "style", // Code Style
         "refactor", // Refactor
-        "test", // Related Test
         "chore", // Build
         "revert", // Revert Commit
         "lint", //Lint update
       ],
     ],
     "scope-empty": [2, "never"],
+    "type-empty": [2, "never"],
+    "subject-empty": [2, "never"],
   },
 };
