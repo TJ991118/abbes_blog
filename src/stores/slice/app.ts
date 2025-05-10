@@ -5,23 +5,23 @@ import { createSlice } from "@reduxjs/toolkit";
 */
 
 type AppSliceType = {
-  version: string
-  theme: string
-  mode: "light" | "dark"
-}
+  version: string;
+  theme: string;
+  mode: "light" | "dark";
+};
 
 const initialState = {
   version: "v0.0.1",
   theme: "default",
-  mode: "light"
-}
+  mode: "light",
+} as AppSliceType;
 
 const appSlice = createSlice({
   name: "app",
-  initialState: {},
+  initialState: initialState,
   reducers: {
-    updateApp: () => {}
-  }
-})
+    updateApp: () => {},
+  },
+});
 
-export default appSlice
+export default appSlice;

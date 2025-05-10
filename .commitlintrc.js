@@ -11,10 +11,11 @@ export default {
         "style", // Code Style
         "refactor", // Refactor
         "test", // Related Test
-        "chore", // Build 
+        "chore", // Build
         "revert", // Revert Commit
+        "lint", //Lint update
       ],
     ],
     "scope-empty": [2, "never"],
-  }
+  },
 };
