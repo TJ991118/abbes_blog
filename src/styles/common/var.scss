@@ -1,1 +1,27 @@
-$primary-color: var(--apsc-primary-color)
+/* 
+  * @desc: some variable for the project
+  * @date: 2025-05-08
+*/
+
+@use "sass:map";
+@use "sass:list";
+
+// **** Generate the color variable  **** //
+@function generate-colors($name) {
+  $color-map: ();
+  @each $model, $index in $models {
+    $color-map: map.merge(
+      $color-map,
+      (
+        $model: var(--apsc-#{$name}-#{$model}),
+      )
+    );
+  }
+  @return $color-map;
+}
+
+// **** Color Models **** //
+$models: "base", "on-base", "container", "on-container";
+
+// **** Plalette Colors **** //
+$primary: generate-colors("primary");

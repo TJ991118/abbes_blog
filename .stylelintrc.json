@@ -4,7 +4,19 @@
   "rules": {
     "order/properties-order": ["position", "top", "right", "bottom", "left"],
     "selector-class-pattern": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["after-same-name", "inside-block"],
+        "ignore": [
+          "after-comment",
+          "blockless-after-blockless",
+          "blockless-after-same-name-blockless"
+        ],
+        "ignoreAtRules": ["else"]
+      }
+    ]
   },
   "overrides": [
     {
