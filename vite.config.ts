@@ -5,7 +5,15 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), stylelint()],
+  plugins: [
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
+    stylelint(),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"), // 必须使用绝对路径

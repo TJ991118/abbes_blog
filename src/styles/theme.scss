@@ -1,3 +1,27 @@
-:root[data-theme="\201Clight\201D"] {
-  --abbes-on-primary: 1
+/* 
+  * @desc: the css variable for theme
+  * @date: 2025-05-10
+*/
+
+// **** The platte-model **** //
+$palette-models: (
+  base: 20,
+  on-base: 40,
+  container: 60,
+  on-container: 80,
+);
+
+// **** Generate css variable by platte-model **** //
+@mixin generate-variable($var-name) {
+  @each $name, $value in $palette-models {
+    --apsc-#{$var-name}-#{$name}: var(--apsc-#{$var-name}-#{$value});
+  }
+}
+
+:root[data-theme="light"] {
+  @include generate-variable(primary);
+}
+
+:root[data-theme="dark"] {
+  --apsc-primary-base: var(--apsc-primary-20);
 }

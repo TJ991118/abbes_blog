@@ -1,11 +1,17 @@
-import { themeTransVar } from "@abbes/design-theme-color"
-import defaultTheme from "@/styles/theme/default.json"
+import { css } from "@emotion/react";
+import { themeTransVar } from "@abbes/design-theme-color";
 
-export const setTheme = () => {
-  const root = document.documentElement
-  const vars = themeTransVar(defaultTheme, false)
-  Object.entries(vars).forEach(([key, value]) => {
-    root.style.setProperty(key, `#${value}` as string);
-  })
-}
+import defaultTheme from "@/styles/theme/default.json";
 
+export const setTheme = (isDark?: boolean) => {
+  const vars = themeTransVar(defaultTheme, isDark ? isDark : false);
+  return css`
+    :root {
+      ${Object.entries(vars)
+        .map(([key, value]) => {
+          return `${key}: #${value}`;
+        })
+        .join(";\n")}
+    }
+  `;
+};

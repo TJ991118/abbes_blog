@@ -21,13 +21,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    
-     /* Custom */
-     "typeRoots": ["./node_modules/@types", "./src/types"],
-     "baseUrl": ".", // 基础路径
-     "paths": {
-       "@/*": ["src/*"] // 匹配 @/ 别名
-     }
+
+    /* Custom */
+    "jsxImportSource": "@emotion/react",
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "baseUrl": ".", // 基础路径
+    "paths": {
+      "@/*": ["src/*"] // 匹配 @/ 别名
+    }
   },
   "include": ["src"]
 }
