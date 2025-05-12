@@ -4,11 +4,19 @@ import { setTheme } from "./common/theme";
 import "./App.scss";
 import "@/styles/theme.scss";
 
+import ComContainer from "./components/common/Container";
+
 function App() {
   return (
     <div id="app" className="app">
       <Global styles={setTheme(false)} />
-      This is App
+      <ComContainer
+        css={{
+          color: "red",
+        }}
+      >
+        This is App
+      </ComContainer>
     </div>
   );
 }

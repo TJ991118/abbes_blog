@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // 必须使用绝对路径
+      "@": path.resolve(__dirname, "./src"), // 必须使用绝对路径
     },
   },
   css: {

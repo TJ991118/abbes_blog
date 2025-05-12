@@ -6,10 +6,24 @@
 // **** Container Component **** //
 .com-container {
   &.container-type {
-    &__container {
-      @include mixins.reponsive("PC") {
-        min-width: 1232px;
+    width: 100%;
+    @include mixins.reponsive("PC") {
+      &__page {
+        width: 100vw;
+        min-height: 100vh;
+      }
+      &__container {
+        margin: 0 auto;
+        max-width: 1232px;
+      }
+      &__box {
+        width: 100%;
       }
     }
+  }
+
+  &.container-fullWidth {
+    width: 100%;
+    max-width: 100%;
   }
 }

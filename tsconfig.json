@@ -24,11 +24,11 @@
 
     /* Custom */
     "jsxImportSource": "@emotion/react",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "baseUrl": ".", // 基础路径
+    "typeRoots": ["./node_modules/@types", "./src/*"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"] // 匹配 @/ 别名
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "tests"]
 }
