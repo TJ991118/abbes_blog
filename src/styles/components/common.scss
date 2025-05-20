@@ -4,12 +4,3 @@
 */
 
 // **** Container Component **** //
-.com-container {
-  &.container-type {
-    &__container {
-      @include mixins.reponsive("PC") {
-        min-width: 1232px;
-      }
-    }
-  }
-}

@@ -1,0 +1,33 @@
+.com-container {
+  &.container-type {
+    width: 100%;
+
+    &__page {
+      width: 100vw;
+      min-height: 100vh;
+    }
+
+    &__container {
+      margin: 0 auto;
+    }
+    @include mixins.responsive("PC") {
+      &__container {
+        max-width: 1232px;
+      }
+
+      &__box {
+        width: 100%;
+      }
+    }
+    @include mixins.responsive("MB") {
+      &__box {
+        padding: 1rem;
+      }
+    }
+  }
+
+  &.container-fullWidth {
+    width: 100%;
+    max-width: 100%;
+  }
+}
