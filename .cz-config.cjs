@@ -41,7 +41,16 @@ module.exports = {
       name: "↩  revert:   Revert old version",
     },
   ],
-  scopes: ["auth", "bug", "ui", "config", "test", "deploy", "component"],
+  scopes: [
+    "auth",
+    "bug",
+    "ui",
+    "config",
+    "test",
+    "deploy",
+    "component",
+    "format",
+  ],
   messages: {
     type: "选择提交类型（必填）",
     scope: "输入影响范围（可选）",
