@@ -14,6 +14,9 @@ export default defineConfig({
     }),
     stylelint(),
   ],
+  server: {
+    host: "0.0.0.0",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"), // 必须使用绝对路径

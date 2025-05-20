@@ -6,8 +6,20 @@
 @use "sass:map";
 @use "sass:list";
 
-// **** Generate the color variable  **** //
-@function generate-colors($name) {
+// **** Generate variable function **** //
+@function generate-vars($name, $models) {
+  $color-map: ();
+  @each $model, $index in $models {
+    $color-map: map.merge(
+      $color-map,
+      (
+        $model: var(--apsc-#{$name}-#{$model}),
+      )
+    );
+  }
+  @return $color-map;
+}
+@function generate-others($name) {
   $color-map: ();
   @each $model, $index in $models {
     $color-map: map.merge(
@@ -20,8 +32,11 @@
   @return $color-map;
 }
 
-// **** Color Models **** //
-$models: "base", "on-base", "container", "on-container";
+// **** Var name models **** //
+$color-models: "base", "on-base", "container", "on-container";
 
 // **** Plalette Colors **** //
-$primary: generate-colors("primary");
+$primary: generate-vars("primary", $color-models);
+
+// **** Other Styles **** //
+$edge: generate-vars("edge", $color-models);

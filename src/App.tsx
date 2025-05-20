@@ -1,23 +1,12 @@
-import { Global } from "@emotion/react";
+import { RouterProvider } from "react-router";
 
-import { setTheme } from "./common/theme";
+import routers from "./routers";
+
 import "./App.scss";
 import "@/styles/theme.scss";
-
-import ComContainer from "./components/common/Container";
+import "@/styles/components/common.scss";
 
 function App() {
-  return (
-    <div id="app" className="app">
-      <Global styles={setTheme(false)} />
-      <ComContainer
-        css={{
-          color: "red",
-        }}
-      >
-        This is App
-      </ComContainer>
-    </div>
-  );
+  return <RouterProvider router={routers} />;
 }
 export default App;

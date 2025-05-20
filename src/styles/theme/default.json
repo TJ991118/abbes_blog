@@ -1,15 +1,18 @@
 {
-  "palette": {
+  "color": {
     "primary": "red",
     "secondary": "green",
     "netural": "blue",
     "success": "green",
-    "error": "red"
+    "error": "red",
+    "white": "white",
+    "black": "black"
   },
-  "other": {
-    "fontSize": {
-      "md": "1rem",
-      "sm": ""
-    }
+  "fontSize": {
+    "md": "1rem",
+    "sm": "0.75rem"
+  },
+  "lineHeight": {
+    "md": "1rem"
   }
 }
